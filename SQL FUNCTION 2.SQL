@@ -1,0 +1,42 @@
+SQL> select ename from emp where length(ename)=4;
+
+ENAME
+----------
+WARD
+KING
+FORD
+
+SQL> select job from emp where length(job)=7;
+
+JOB
+---------
+MANAGER
+MANAGER
+MANAGER
+ANALYST
+ANALYST
+
+SQL> SELECT ENAME , JOB FROM EMP WHERE SUBSTR(JOB,-3)='MAN';
+
+ENAME      JOB
+---------- ---------
+ALLEN      SALESMAN
+WARD       SALESMAN
+MARTIN     SALESMAN
+TURNER     SALESMAN
+
+SQL> SELECT ENAME,JOB FROM EMP WHERE SUBSTR(JOB,1,3)='MAN';
+
+ENAME      JOB
+---------- ---------
+JONES      MANAGER
+BLAKE      MANAGER
+CLARK      MANAGER
+
+SQL> SELECT ENAME FROM EMP WHERE LENGTH(ENAME)-LENGTH(REPLACE(ENAME,'L'))=1;
+
+ENAME
+----------
+BLAKE
+CLARK
+
